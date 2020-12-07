@@ -1,0 +1,33 @@
+{
+    "name": "lauwen/grid",
+    "description": "A sub grid for laravel-admin grid.",
+    "type": "library",
+    "keywords": ["laravel-admin", "extension"],
+    "homepage": "https://github.com/lauwen/grid",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "lauwen",
+            "email": "me@luxuewen.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "encore/laravel-admin": "~1.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lauwen\\Grid\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lauwen\\Grid\\GridServiceProvider"
+            ]
+        }
+    }
+}
