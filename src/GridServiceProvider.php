@@ -34,9 +34,5 @@ class GridServiceProvider extends ServiceProvider
             Admin::css('vendor/lauwen/grid/css/lauwen-table.css');
             Admin::css('vendor/lauwen/grid/css/bootstrap-table.min.css');
         });
-
-        $this->app->booted(function () {
-            GridExtension::routes(__DIR__.'/../routes/web.php');
-        });
     }
 }
