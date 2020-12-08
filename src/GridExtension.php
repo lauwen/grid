@@ -11,10 +11,4 @@ class GridExtension extends Extension
     public $views = __DIR__.'/../resources/views';
 
     public $assets = __DIR__.'/../resources/assets';
-
-    public $menu = [
-        'title' => 'GridExtension',
-        'path'  => 'grid',
-        'icon'  => 'fa-gears',
-    ];
 }

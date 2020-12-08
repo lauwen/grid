@@ -66,4 +66,13 @@ class Grid extends AdminGrid
         return $this;
     }
 
+    /**
+     * Set sub grid
+     *
+     * @param Closure $callback
+     */
+    public function setSubGrid (Closure $callback) {
+        call_user_func($callback, $this);
+    }
+
 }

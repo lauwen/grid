@@ -46,8 +46,11 @@
                 @endif
                 @foreach($grid->rows() as $row)
                 <tr {!! $row->getRowAttributes() !!}
+                    @if (isset($subGridColumns) && isset($subGridFields) && isset($subGridUrl))
                     data-fields={!! $subGridFields !!}
-                    onclick="lauwenGridGetSubformData(this,'{!! $subGridUrl !!}')">
+                    onclick="lauwenGridGetSubformData(this,'{!! $subGridUrl !!}')"
+                    @endif
+                >
                     @foreach($grid->visibleColumnNames() as $name)
                     <td {!! $row->getColumnAttributes($name) !!}>
                         {!! $row->column($name) !!}
@@ -68,7 +71,7 @@
     <div class="box-footer clearfix">
         {!! $grid->paginator() !!}
     </div>
-    @if (isset($subGridColumns))
+    @if (isset($subGridColumns) && isset($subGridFields) && isset($subGridUrl))
     <div class="box-body table-responsive no-padding">
         <table class="table table-hover table-striped" id="lauwen-grid-data-subtable">
             @if (isset($subGridTitle))
