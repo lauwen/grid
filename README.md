@@ -11,6 +11,12 @@ php artisan vendor:publish --provider=Lauwen\Grid\GridServiceProvider
 
 ### 使用
 #### 在laravel-admin的grid中使用
+首先引入\Lauwen\Grid\Grid替换原有的Grid
+```
+$grid = new \Lauwen\Grid\Grid(new Model());
+```
+
+然后调用
 ```
 $grid->setSubGridTitle("你的子列表标题");
 $grid->setSubGridUrl("请求的数据接口地址");    // la_id::get
@@ -28,7 +34,7 @@ $grid->setSubGrid(function ($subGrid) {
 ```
 
 #### 数据接口说明
-子列表通过get类型请求方式获取数据，请求数据时会传递列表主键到数据接口，键名：la_id
+子列表通过get类型请求方式获取数据，请求数据时会传递列表主键到数据接口，键名：la_id，获取方式可参考如下
 ```
 $id = request()->get('la_id');
 ```
