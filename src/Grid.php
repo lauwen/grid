@@ -40,7 +40,7 @@ class Grid extends AdminGrid
      * @return $this
      */
     public function setSubGridUrl ($subGridUrl) {
-        $this->variables['subGridUrl'] = $subGridUrl;
+        $this->variables['subGridUrl'] = json_encode($subGridUrl);
         return $this;
     }
 
