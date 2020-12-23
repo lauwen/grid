@@ -1,11 +1,10 @@
 ### 版本
-[1.0.1版本(最新)](https://github.com/lauwen/grid/blob/master/README.md)
-
 [1.0.0版本](https://github.com/lauwen/grid/blob/master/README1.md)
-### 安装
+
+[1.0.1版本(最新)](https://github.com/lauwen/grid/blob/master/README.md)
 #### 运行以下命令进行本地安装
 ```
-composer require lauwen/grid
+composer require lauwen/grid:1.0.0
 ```
 
 #### 发布静态文件
@@ -22,30 +21,18 @@ $grid = new \Lauwen\Grid\Grid(new Model());
 
 然后调用
 ```
-$grid->setSubGridTitle(["你的子列表标题", ...]);
-$grid->setSubGridUrl(["请求的数据接口地址", ...]);    // la_id::get
-$grid->setSubGridColumns([
-    ["ID", "Name", "Price", "Quantity"],
-    ...
-]);  // 列标题
-$grid->setSubGridFields([
-    ['detail_id', 'name', 'price', 'quantity'],
-    ...
-]);    // 列字段名
+$grid->setSubGridTitle("你的子列表标题");
+$grid->setSubGridUrl("请求的数据接口地址");    // la_id::get
+$grid->setSubGridColumns(["ID", "Name", "Price", "Quantity"]);  // 列标题
+$grid->setSubGridFields(['detail_id', 'name', 'price', 'quantity']);    // 列字段名
 
 或者
 
 $grid->setSubGrid(function ($subGrid) {
-    $subGrid->setSubGridTitle(["你的子列表标题", ...]);
-    $subGrid->setSubGridUrl(["请求的数据接口地址", ...]);    // la_id::get
-    $subGrid->setSubGridColumns([
-        ["ID", "Name", "Price", "Quantity"],
-        ...
-    ]);  // 列标题
-    $subGrid>setSubGridFields([
-        ['detail_id', 'name', 'price', 'quantity'],
-        ...
-    ]);    // 列字段名
+    $subGrid->setSubGridTitle("你的子列表标题");
+    $subGrid->setSubGridUrl("请求的数据接口地址");    // la_id::get
+    $subGrid->setSubGridColumns(["ID", "Name", "Price", "Quantity"]);  // 列标题
+    $subGrid->setSubGridFields(['id', 'name', 'price', 'quantity']);    // 列字段名
 });
 ```
 
