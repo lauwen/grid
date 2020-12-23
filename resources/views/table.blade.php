@@ -48,7 +48,8 @@
                 <tr {!! $row->getRowAttributes() !!}
                     @if (isset($subGridColumns) && isset($subGridFields) && isset($subGridUrl))
                     data-fields={!! $subGridFields !!}
-                    onclick="lauwenGridGetSubformData(this,'{!! $subGridUrl !!}')"
+                    data-urls={!! $subGridUrl !!}
+                    onclick="lauwenGridGetSubformData(this)"
                     @endif
                 >
                     @foreach($grid->visibleColumnNames() as $name)
@@ -72,25 +73,58 @@
         {!! $grid->paginator() !!}
     </div>
     @if (isset($subGridColumns) && isset($subGridFields) && isset($subGridUrl))
-    <div class="box-body table-responsive no-padding">
-        <table class="table table-hover table-striped" id="lauwen-grid-data-subtable">
-            @if (isset($subGridTitle))
-            <caption class="lauwen-grid-data-subtable-title">{{ $subGridTitle }}</caption>
-            @endif
-            <thead>
-            <tr>
-                @foreach ($subGridColumns as $subColumn)
-                <th>{{ $subColumn }}</th>
-                @endforeach
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td colspan="5" align="center">还没有数据哦！</td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="row">
+        @if (count($subGridColumns) == 1)
+        <div class="col-sm-12">
+        @else
+        <div class="col-sm-6">
+        @endif
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover table-striped" id="lauwen-grid-data-subtable-left">
+                    @if (isset($subGridTitle))
+                        <caption class="lauwen-grid-data-subtable-title">{{ $subGridTitle[0] }}</caption>
+                    @endif
+                    <thead>
+                    <tr>
+                        @foreach ($subGridColumns[0] as $subColumn)
+                            <th>{{ $subColumn }}</th>
+                        @endforeach
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="{{ count($subGridColumns[0]) }}" align="center">还没有数据哦！</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        @if (count($subGridColumns) == 2)
+        <div class="col-sm-6">
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover table-striped" id="lauwen-grid-data-subtable-right">
+                    @if (isset($subGridTitle))
+                        <caption class="lauwen-grid-data-subtable-title">{{ $subGridTitle[1] }}</caption>
+                    @endif
+                    <thead>
+                    <tr>
+                        @foreach ($subGridColumns[1] as $subColumn)
+                            <th>{{ $subColumn }}</th>
+                        @endforeach
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="{{ count($subGridColumns[1]) }}" align="center">还没有数据哦！</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        @endif
     </div>
+
+
     @endif
     <!-- /.box-body -->
 </div>
