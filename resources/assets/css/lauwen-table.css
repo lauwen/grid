@@ -1,5 +1,28 @@
-.lauwen-grid-data-subtable-title{
-    padding: 10px 15px;
+.lauwen-grid-data-subtable-head{
+    height: 45px;
+    padding: 0px 15px;
     color: #1a2226;
     font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.lauwen-grid-data-subtable-head .lauwen-grid-subtable-title{
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+.lauwen-grid-data-subtable-head .lauwen-grid-subtable-save-btn{
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.lauwen-grid-data-subtable-head .lauwen-grid-subtable-save-btn>button{
+    height: 25px;
+    line-height: 25px;
+    padding: 0px 10px;
+}
+#lauwen-grid-data-subtable-left, #lauwen-grid-data-subtable-right td{
+    cursor: pointer;
 }

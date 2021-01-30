@@ -75,4 +75,15 @@ class Grid extends AdminGrid
         call_user_func($callback, $this);
     }
 
+    /**
+     * Set action url
+     *
+     * @param $actionUrl
+     * @return $this
+     */
+    public function setActionUrl ($actionUrl) {
+        $this->variables['actionUrl'] = $actionUrl;
+        return $this;
+    }
+
 }
