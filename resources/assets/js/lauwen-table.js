@@ -18,10 +18,11 @@ function lauwenGridGetSubformData (obj) {
                     lauwen_grid_data_subtable_content += `<tr>`;
                     for (var j = 0; j < lauwen_grid_data_fields[0].length; j++) {
                         var lauwen_grid_data_field = lauwen_grid_data_fields[0][j];
-                        if ($("#lauwen-grid-data-subtable-left").prev().children("div:last-child").children("button").length > 0) {
-                            lauwen_grid_data_subtable_content += `<td  align="center" onclick="tdclick(this)" data-name="`+lauwen_grid_data_field+`">`+res[i][lauwen_grid_data_field]+`</td>`;
+                        // if ($("#lauwen-grid-data-subtable-left").prev().children("div:last-child").children("button").length > 0) {
+                        if (lauwen_grid_data_field.editable==true) {
+                            lauwen_grid_data_subtable_content += `<td  align="center" onclick="tdclick(this)" data-name="`+lauwen_grid_data_field.field+`">`+res[i][lauwen_grid_data_field.field]+`</td>`;
                         }else{
-                            lauwen_grid_data_subtable_content += `<td  align="center">`+res[i][lauwen_grid_data_field]+`</td>`;
+                            lauwen_grid_data_subtable_content += `<td  align="center">`+res[i][lauwen_grid_data_field.field]+`</td>`;
                         }
                     }
                     lauwen_grid_data_subtable_content +=`</tr>`;
@@ -47,10 +48,11 @@ function lauwenGridGetSubformData (obj) {
                         lauwen_grid_data_subtable_content += `<tr>`;
                         for (var j = 0; j < lauwen_grid_data_fields[1].length; j++) {
                             var lauwen_grid_data_field = lauwen_grid_data_fields[1][j];
-                            if ($("#lauwen-grid-data-subtable-right").prev().children("div:last-child").children("button").length > 0) {
-                                lauwen_grid_data_subtable_content += `<td  align="center" onclick="tdclick(this)" data-name="`+lauwen_grid_data_field+`">`+res[i][lauwen_grid_data_field]+`</td>`;
+                            // if ($("#lauwen-grid-data-subtable-right").prev().children("div:last-child").children("button").length > 0) {
+                            if (lauwen_grid_data_field.editable==true) {
+                                lauwen_grid_data_subtable_content += `<td  align="center" onclick="tdclick(this)" data-name="`+lauwen_grid_data_field.field+`">`+res[i][lauwen_grid_data_field.field]+`</td>`;
                             }else{
-                                lauwen_grid_data_subtable_content += `<td  align="center">`+res[i][lauwen_grid_data_field]+`</td>`;
+                                lauwen_grid_data_subtable_content += `<td  align="center">`+res[i][lauwen_grid_data_field.field]+`</td>`;
                             }
                         }
                         lauwen_grid_data_subtable_content +=`</tr>`;
