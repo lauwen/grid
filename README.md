@@ -117,7 +117,7 @@ $grid->setSubGrid(function ($subGrid) {
 $id = request()->get('la_id');
 ```
 
-返回的数据格式为json数组
+返回的数据格式为json数组，如果需要编辑必须返回主键为id,否则编辑后提交会有问题
 ```
 [
     {
@@ -135,7 +135,7 @@ $id = request()->get('la_id');
 ]
 ```
 #### 保存数据接口说明
-子列表通过post类型请求方式提交数据，请求数据时会传递列表主键到数据接口，键名：la_data，获取方式可参考如下
+子列表通过post类型请求方式提交数据，保存数据时会传递数据到保存接口，键名：la_data，获取方式可参考如下
 ```
 $id = request()->post('la_data');
 ```
