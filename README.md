@@ -24,6 +24,7 @@ $grid = new \Lauwen\Grid\Grid(new Model());
 ```
 $grid->setSubGridTitle(["你的子列表标题", ...]);
 $grid->setSubGridUrl(["请求的数据接口地址", ...]);    // la_id::get
+$grid->setActionUrl(["保存数据的接口地址", ...]);    // la_data::post
 $grid->setSubGridColumns([
     ["ID", "Name", "Price", "Quantity"],
     ...
