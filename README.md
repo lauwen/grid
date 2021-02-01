@@ -29,6 +29,7 @@ $grid->setSubGridColumns([
     ["ID", "Name", "Price", "Quantity"],
     ...
 ]);  // 列标题
+// 其中field为字段名，editable为该字段是否可编辑
 $grid->setSubGridFields([
     [
         [
@@ -64,6 +65,7 @@ $grid->setSubGrid(function ($subGrid) {
         ["ID", "Name", "Price", "Quantity"],
         ...
     ]);  // 列标题
+    // 其中field为字段名，editable为该字段是否可编辑
     $subGrid->setSubGridFields([
         [
             [
